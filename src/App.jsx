@@ -1,9 +1,10 @@
+import Input from "./components/input"
 
 function App() {
 
   return (
     <>
-      <h1>Conversor de moedas</h1>
+      <Input/>
     </>
   )
 }
