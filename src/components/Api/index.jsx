@@ -6,9 +6,9 @@ const Api = () => {
     
     const [moedas, setMoedas] = useState('')
 
-    async function getMoedas() {
+    async function getMoedas(key) {
         try {
-            const response =  await axios.get(`https://v6.exchangerate-api.com/v6/83fc1f2415e19e4528dd8644/latest/USD`)
+            const response =  await axios.get(`https://v6.exchangerate-api.com/v6/${key}/latest/USD`)
             setMoedas(Object.keys(response.data.conversion_rates))
         } catch (error) {
             console.error("Erro na requisicao: ", error)
@@ -18,7 +18,7 @@ const Api = () => {
     }
 
     useEffect(() => {
-        getMoedas()
+        getMoedas("83fc1f2415e19e4528dd8644")
     }, [])
 
     return (

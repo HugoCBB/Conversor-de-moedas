@@ -1,5 +1,5 @@
-import Api from "./components/api"
-// import Input from "./components/input"
+// import Api from "./components/api"
+import Input from "./components/input"
 
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <Api/>
+      <Input/>
     </>
   )
 }
