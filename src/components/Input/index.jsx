@@ -123,7 +123,12 @@ const Input = () => {
         setTriggerConversion(true);
     }
 
-    
+    const setarEscolha_1 = (moeda) => {
+        setInputSearch_1(moeda)
+    }
+    const setarEscolha_2 = (moeda) => {
+        setInputSearch_2(moeda)
+    }
     return (
         <main className='input'>
             <section className='input-title'>
@@ -140,7 +145,9 @@ const Input = () => {
                     {filterSearchInput_1.length > 0 && (
                         <div className='dropdown' ref={dropdownRef1}>
                             {filterSearchInput_1.map((moeda) => (
-                                <div key={moeda}>{moeda}</div>
+                                <div 
+                                onClick={() => setarEscolha_1(moeda)}
+                                key={moeda}>{moeda}</div>
                             ))}
                         </div>
                     )}
@@ -156,9 +163,13 @@ const Input = () => {
                         placeholder='BRL - REAL'
                     />
                     {filterSearchInput_2.length > 0 && (
-                        <div className='dropdown' ref={dropdownRef2}>
+                        <div className='dropdown' 
+                        
+                        ref={dropdownRef2}>
                             {filterSearchInput_2.map((moeda) => (
-                                <div key={moeda}>{moeda}</div>
+                                <div 
+                                onClick={() => setarEscolha_2(moeda)}
+                                key={moeda}>{moeda}</div>
                             ))}
                         </div>
                     )}
